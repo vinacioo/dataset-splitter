@@ -1,4 +1,3 @@
-````markdown
 # Dataset Splitter
 
 This script splits a dataset of images into training and testing sets, and randomizes the data before splitting. It is useful for preparing datasets for machine learning models.
@@ -9,7 +8,6 @@ This script splits a dataset of images into training and testing sets, and rando
   ```sh
   pip install numpy
   ```
-````
 
 ## Usage
 
