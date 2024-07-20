@@ -25,9 +25,10 @@ from os.path import isdir, join
 from shutil import move, rmtree
 from typing import List
 
+from tqdm import tqdm
+
 from helpers.constants import (DATASET_PATH, DESTINATION_PATH,
                                IMAGE_EXTENSIONS, TEST_RATIO, TRAIN_RATIO)
-from tqdm import tqdm
 
 
 def create_directories(paths: List[str]) -> None:
@@ -75,9 +76,7 @@ def split_dataset(
     for label in tqdm(labels, desc="Processing labels", colour="blue"):
         path_label = join(dataset_path, label)
         images: List[str] = [
-            img
-            for img in listdir(path_label)
-            if img.lower().endswith(IMAGE_EXTENSIONS)
+            img for img in listdir(path_label) if img.lower().endswith(IMAGE_EXTENSIONS)
         ]
         n_files = len(images)
 
